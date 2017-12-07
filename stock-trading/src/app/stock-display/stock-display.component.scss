@@ -1,0 +1,34 @@
+.stock-item__table td {
+  min-width: 8rem;
+  text-align: right;
+}
+
+.stock-item__table-actual-quote {
+  font-weight: bold;
+}
+
+.stock-item__header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stock-item__name {
+  display: inline;
+}
+
+.stock-item__icons {
+  font-size: 3rem;
+}
+
+.stock-item__icons--up {
+  color: lightgreen;
+}
+
+.stock-item__icons--down {
+  color: red;
+}
+
+.stock-item__icons--flat {
+  color: lightgray;
+}

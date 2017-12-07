@@ -1,0 +1,10 @@
+<h1>Fake Stock Trading</h1>
+<app-money [money]="(stockUpdate$ | async)?.money"></app-money>
+
+<div class="trading__container">
+  <div *ngFor="let stock of stocks" class="trading__stock-item">
+    <app-stock-display [stockName]="stock.name" [stockUpdate$]="stock.updates" [trend$]="stock.trend"></app-stock-display>
+    <app-stock-trade (buyClicked)="buy(stock.id, $event)" (sellClicked)="sell(stock.id, $event)"></app-stock-trade>
+    <app-stock-history [stockHistory$]="stock.history"></app-stock-history>
+  </div>
+</div>

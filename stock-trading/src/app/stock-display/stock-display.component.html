@@ -1,0 +1,21 @@
+
+<div class="stock-item__header-container">
+  <h2 class="stock-item__name">{{stockName}}</h2>
+  <i class="material-icons stock-item__icons stock-item__icons--up" *ngIf="(trend$ | async) > 0">trending_up</i>
+  <i class="material-icons stock-item__icons stock-item__icons--down" *ngIf="(trend$ | async) < 0">trending_down</i>
+  <i class="material-icons stock-item__icons stock-item__icons--flat" *ngIf="(trend$ | async) === 0">trending_flat</i>
+</div>
+<table class="stock-item__table">
+  <tr>
+    <td>Actual quote:</td>
+    <td class="stock-item__table-actual-quote">{{(stockUpdate$ | async)?.quote | number }}</td>
+  </tr>
+  <tr>
+    <td>Amount held:</td>
+    <td>{{(stockUpdate$ | async)?.held | number }}</td>
+  </tr>
+  <tr>
+    <td>Shares in market:</td>
+    <td>{{(stockUpdate$ | async)?.amount | number }}</td>
+  </tr>
+</table>

@@ -1,0 +1,17 @@
+<table *ngIf="(stockHistory$ | async)?.length; else loading;">
+  <tr>
+    <th>Historic values</th>
+  </tr>
+  <tr  *ngFor="let entry of stockHistory$ | async">
+    <td class="stock-history--right-aligned stock-history--min-width">{{entry | number}}</td>
+  </tr>
+
+</table>
+
+<ng-template #loading>
+  <table>
+    <tr>
+      <td>Waiting for more data...</td>
+    </tr>
+  </table>
+</ng-template>

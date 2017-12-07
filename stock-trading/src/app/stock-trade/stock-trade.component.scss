@@ -1,0 +1,41 @@
+%button_base {
+  padding: 0.5rem;
+  border: 1px solid white;
+  border-radius: 2rem;
+  width: 5rem;
+  color: white;
+  margin: 0 1rem 0 0;
+
+  cursor: pointer;
+
+  transition: background-color 0.5s ease-in;
+
+}
+
+$bg_color_buy: darkgreen;
+$bg_color_sell: darkred;
+$bg_color_darken_factor: 10;
+
+.stock-trade__container {
+  margin: 2rem 0;
+}
+
+.stock-trade__buy-button {
+  @extend %button_base;
+
+  background-color: $bg_color_buy;
+
+  &:hover {
+    background-color: darken($bg_color_buy, $bg_color_darken_factor);
+  }
+}
+
+.stock-trade__sell-button {
+  @extend %button_base;
+
+  background-color: $bg_color_sell;
+  &:hover {
+    background-color: darken($bg_color_sell, $bg_color_darken_factor);
+  }
+
+}
